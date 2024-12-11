@@ -17,19 +17,16 @@ FONTHUB is a web app designed to help users quickly find and preview fonts. It a
 
 ## Getting Started
 
-### Prerequisites
 
-To run this project locally, you will need:
-- A modern web browser (Chrome, Firefox, etc.)
-- A code editor (e.g., VSCode)
 
 ### Installing
 
 1. Clone the repository:
     ```bash
+    
     git clone https://github.com/ovishkh/FONTHUB.git
-    ```
-        ```bash
+
+        
     cd FONTHUB
     ```
    
