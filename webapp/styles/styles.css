@@ -1,75 +1,232 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
 body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-  }
-  
-  .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px;
-  }
-  
-  .search-bar {
-      width: 80%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 30px;
-      font-size: 18px;
-  }
-  
-  .font-preview {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-  }
-  
-  .font-card {
-      text-align: center;
-      font-size: 16px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      max-width: 200px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      cursor: pointer;
-  }
-  
-  .font-card:hover {
-      background-color: #f0f0f0;
-  }
-  
-  .font-card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-  }
-  
-  .font-card p {
-      font-size: 14px;
-      color: #666;
-  }
-  
-  .font-details {
-      margin-top: 30px;
-      text-align: center;
-      max-width: 600px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #fff;
-  }
-  
-  .font-details h3 {
-      margin-bottom: 10px;
-  }
-  
-  .font-details p {
-      font-size: 16px;
-      color: #333;
-  }
-  
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.navbar {
+    position: fixed;  /* Fixed position so it stays at the top */
+    top: 10px;        /* 10px from the top */
+    left: 50%;        /* Move to the center horizontally */
+    transform: translateX(-50%);  /* Offset by 50% of its width to center */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;        /* Set width to 80% of the viewport */
+    max-width: 1200px; /* Max width of 1200px */
+    background: #2a9d8f;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    z-index: 100;
+}
+
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color:  #ffffff;
+}
+#searchBar {
+    flex: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    
+}
+.save-btn {
+    padding: 10px 15px;
+    background: #2a9d8f;
+    color: #fff;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.save-btn:hover {
+    background: #247b69;
+}
+
+/* Main Section Styling */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#fontPreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.font-card {
+    
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.font-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.font-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #2a9d8f;
+}
+.font-card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Floating Nav Bar */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a9d8f;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    width: 80%;
+}
+
+/* Small FontHub (Italic) */
+nav h1 {
+    font-size: 1.5rem;
+    color: white;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Search Bar Style */
+nav input {
+    padding: 8px;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Floating Font Preview */
+.floating-preview {
+    position: fixed;
+    bottom: -500px; /* Initially hidden below the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 700px;
+    background: #ffffff;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    transition: bottom 0.5s ease;
+    z-index: 1000;
+}
+
+.floating-preview.show {
+    bottom: 0; /* Slides up */
+}
+
+.floating-preview h2 {
+    color: #264653;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-align: center;
+    font-style: italic; /* Italic text */
+}
+
+/* Table Styling */
+.floating-preview table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.floating-preview table th,
+.floating-preview table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.floating-preview table th {
+    background-color: #2a9d8f;
+    color: #fff;
+}
+
+.floating-preview table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.floating-preview a {
+    color: #2a9d8f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.floating-preview a:hover {
+    text-decoration: underline;
+}
+
+/* Close Button */
+.floating-preview .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+}
+
+.floating-preview .close-btn:hover {
+    color: #e74c3c;
+}
+
+/* Copy Button */
+.copy-link-btn {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.copy-link-btn:hover {
+    background-color: #264653;
+}
