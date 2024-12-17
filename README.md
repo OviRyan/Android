@@ -17,20 +17,20 @@ FONTHUB is a web app designed to help users quickly find and preview fonts. It a
 
 ## Getting Started
 
-### Prerequisites
 
-To run this project locally, you will need:
-- A modern web browser (Chrome, Firefox, etc.)
-- A code editor (e.g., VSCode)
 
 ### Installing
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/FONTHUB.git
+    
+    git clone https://github.com/ovishkh/FONTHUB.git
+
+        
+    cd FONTHUB
     ```
    
-2. Open the `index.html` file in your browser to see the app in action.
+
 
 ### Setting Up the Google Sheet
 
@@ -45,8 +45,6 @@ To run this project locally, you will need:
    - Choose the range or the entire document to publish.
    - Copy the generated URL.
 
-3. **Update the `script.js` file**:
-   - Replace the placeholder Google Sheets URL with the published URL of your sheet.
 
 ### Running the App
 
